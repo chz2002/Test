@@ -1,0 +1,19 @@
+.layui-main{
+    position: relative;
+}
+.registerPanel{
+    position: absolute;
+    width: 500px;
+    top:200px;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.index_login,.index_register{
+    padding:0 30px;
+}
+.index_login h3,.index_register h3{
+    line-height: 80px;
+    text-align: center;
+    font-size: 22px;
+}
