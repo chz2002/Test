@@ -1,12 +1,14 @@
 .layui-main{
     position: relative;
+    height: 100%;
+    width: 100%;
 }
 .registerPanel{
     position: absolute;
     width: 500px;
-    top:200px;
+    top:50%;
     left:50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,50%);
 }
 
 .index_login,.index_register{
