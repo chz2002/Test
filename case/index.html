@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js\echarts.min.js"></script>
+    <title>ECharts实验</title>
+    <style>
+        /*
+        div{
+            margin:20px;
+            width: 500px;
+            height: 300px;
+            border: 2px solid red;
+            padding:2px;
+            overflow:scroll;
+            }
+           */ 
+           .box{
+               width: 400px;
+               height: 400px;
+           }
+           .outer{
+               width: 400px;
+               height: 400px;
+               margin: 40px auto;
+               background-color: pink;
+               overflow: hidden;
+               transition: 0.5s linear 0s;
+           }
+    </style>
+</head>
+<body>
+    
+      
+    <div class="box">
+        
+    </div>
+    <div class="outer">
+        <div class="inner">
+            <p>
+                北边河南的强降雨还没结束，南边杭州萧山、绍兴诸暨等地也出现暴雨，萧山进化、诸暨次坞等镇部分村庄也出现水情。这一南一北的强降雨天气都和台风“烟花”有密切的关系，台风“烟花”越来越逼近浙江沿海地区，将会从哪里登陆，会带来什么样的恶劣影响呢？
+
+
+浙江省，省会杭州，位于我国东南沿海，长江三角洲南侧，东临东海，南接福建，西与安徽、江西相连，北与上海、江苏接壤，陆地面积10.55万平方公里，常住人口6456.75万人（2020年）。浙江省地形自西南向东北呈阶梯状倾斜，地貌以山地、丘陵为主，平原、盆地为辅，山地、丘陵约占总面积的75%，有“七山一水两分田”之说。浙江境内有很多著名的山脉，如雁荡山、天目山、四明山等。
+
+
+萧山进化、诸暨次坞等出现水情的地方都是低山丘陵地区，山多，村庄多集中在地势较低的山间冲积平地，沿溪而建，一旦出现暴雨，洪水从山上沿着小溪冲下，村子就比较容易被淹。浙江境内有很多河流，如钱塘江（浙江省内第一大河流）、瓯江、灵江、甬江、苕溪、鳌江、曹娥江、飞云江等等。相比河南来说，浙江沿海地区毕竟靠着海，泄洪相对要容易一些。但是如果降雨强度大、持续性强，也容易造成山洪、内涝等险情。
+
+
+虽然台风在江浙沿海地区比较常见，但随着台风“烟花”的逼近，浙江已经连发108条预警，可见这次台风非同一般。台风是由于夏季太阳直射使海面温度迅速上升导致强对流，而产生的热带气旋，大多发生在南、北纬5°～20°之间。热带气旋一般产生于热带海洋洋面上，热带气旋中心附近最大平均风力大于等于12级的称为台风。
+
+
+台风形成后，基本上会沿副热带高压外缘移动。但是台风登陆以后，由于缺乏足够的水汽供应，或者地形阻挡而逐渐变弱直至消失。
+
+
+这次的台风“烟花”覆盖范围非常大，七级风圈半径为200-300公里，目前位于杭州东南方向的洋面上，最大风力 14 级（ 42 米/秒），以每小时 15 公里左右的速度向西北方向移动。据气象部门预测，最大可能于 25 日—— 26 日在浙江中北部沿海登陆，并可能在省内回旋。
+
+
+所谓回旋，就是说台风“烟花”移动的速度很慢，是由于副热带高压缩到太平洋上，实在太偏东了。台风一般会被副热带高压引导，沿着边缘移动，但是由于副热带高压偏得太远，对台风“烟花”的引导作用就大打折扣。
+
+
+            </p>
+        </div>
+    </div>
+
+    <script>
+        /*  ----------------------随机数生成----------------------------
+         function getRandom(min, max){
+             return Math.floor((Math.random()*(max-min+1)))+min;
+         }
+  
+         while (true){
+             var min = prompt("输入最小值");
+             var max = prompt("输入最大值");
+             var count  = prompt("生成几个")
+             
+             var result = '';
+             for(var i=0;i<parseInt(count);i++){
+                 result += (i+1) +':' + getRandom(parseInt(min),max) + ' ';
+             }
+             alert("最后生成的随机数为:" + result);
+  
+  
+             var isContiune = prompt("是否继续？(y/n)");
+             switch (isContiune){
+                 case 'y':
+                    isContiune = 'y';
+                    break;
+                  case 'n':
+                    isContiune = 'n';
+                    break;
+                  default:
+                    isContiune = 'n';
+             }
+  
+             if(isContiune == 'n'){
+                 break;
+             } 
+         } */
+         /*-----------------倒计时案例------------------
+        var inDate = prompt("请输入时间：");
+        var  now = +new Date();
+        var  countOut = +new Date(inDate);
+        var times = (countOut - now)/1000;
+        if(times<5){
+            alert("输入错误!");
+        }
+        else{
+            while((times = (countOut - (+new Date()))/1000 )> 5 ){
+              var d = parseInt(times/60/60/24);
+              var h = parseInt(times/60/60%24);
+              var m = parseInt(times/60%60);
+              var s = parseInt(times%60);
+              alert(d+"天"+h+"时"+m+"分"+s+"秒");
+            }
+        }
+        */
+
+    window.onload = function(){
+        var myChart = echarts.init(document.getElementsByClassName("box")[0]);
+    
+      var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 440, 36, 10, 10, 20]
+            }]
+        };
+        myChart.setOption(option);}
+
+        /*var height = document.getElementsByClassName("inner")[0].scrollHeight;
+        */
+        var scrollheight = document.getElementsByClassName("inner")[0].scrollHeight;
+        var outheight = document.getElementsByClassName("outer")[0].offsetHeight;
+        var newheight = scrollheight + outheight;
+        document.getElementsByClassName("inner")[0].style.height = newheight +"px";
+        var rowpx = 0;
+        var timer = setInterval(go,10);
+        function go(){
+            var sroll = document.getElementsByClassName("outer")[0].scrollTop;
+            if(sroll >= scrollheight){
+                rowpx = 0;
+            }
+            else 
+            {
+                rowpx += 0.5;
+            }
+            document.getElementsByClassName("outer")[0].scrollTop = rowpx;
+        }
+        document.getElementsByClassName("outer")[0].onmouseenter = function(){
+            clearInterval(timer);
+        };
+
+        document.getElementsByClassName("outer")[0].onmouseleave = function(){
+            timer = setInterval(go,10);
+        };
+        
+
+
+       
+        
+
+
+    </script>
+</body>
+</html>
