@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE练习</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="tab-content">
+        <ul>
+            <li><a href="#">橘子</a></li>
+            <li><a href="#">李子</a></li>
+            <li><a href="#">桃子</a></li>
+            <li><a href="#" v-on:click='change()'>{{msg}}</a></li>
+        </ul>
+        <div>
+            <div>
+                橘子
+            </div>
+            <div>
+                李子
+            </div>
+            <div>
+                桃子
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: ".tab-content",
+            data: {
+                msg: "This is a first Vue.",
+                num: 0
+            },
+            methods: {
+                change: function() {
+                    this.msg = this.msg + (this.num++);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
